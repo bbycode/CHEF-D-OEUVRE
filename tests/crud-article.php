@@ -40,7 +40,18 @@ class ArticlesManager
   }
   public function get($article_id)
   {
-    $article_id = (int) $article_id; 
+    $article_id = (int) $article_id;
+    $request = 'SELECT
+    article_id,
+    rate,
+    cost,
+    unit_type,
+    taxes,
+    description
+    FROM Articles WHERE id ='.$article_id;
+    $result = $this->_data->query($request);
+    $tofill = $result->fetch(PDO::FETCH_ASSOC);
+    return new Article($tofill);
   }
 
   function __construct($data)
