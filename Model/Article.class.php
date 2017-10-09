@@ -212,7 +212,6 @@ class Article
 
         if(method_exists($this, $method))
         {
-          echo $method."<br>";
           $this->$property = $value;
         }
       }
@@ -227,14 +226,14 @@ class Article
 
 }
 //test
-$cup = ["article_id"=>1,"rate"=>1500, "cost"=>340,
-"description"=>"Projet Proximus N240","update_time"=>Time(245)];
-$tomate = new Article();
-
-$tomate->hydrate($cup);
+// $cup = ["article_id"=>1,"rate"=>1500, "cost"=>340,
+// "description"=>"Projet Proximus N240","update_time"=>Time(245)];
+// $tomate = new Article();
+//
+// $tomate->hydrate($cup);
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -243,8 +242,8 @@ $tomate->hydrate($cup);
   <body>
     <pre>
       <?php
-        print_r($tomate);
+      //  print_r($tomate);
        ?>
     </pre>
   </body>
-</html>
+</html> -->
