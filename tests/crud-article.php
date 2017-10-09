@@ -5,9 +5,14 @@ require_once('../Model/Article.class.php');
  */
 class ArticlesManager
 {
+  //Instance de la base de donnees
   private $_data;
+  /**
+  *Methode pour ajouter un article
+  */
   public function add(Article $article)
   {
+    //La requête
     $request = 'INSERT INTO Articles
     (rate,
      cost,
@@ -28,17 +33,25 @@ class ArticlesManager
     $result->bindValue(':description',$article->getDescription(), PDO::PARAM_STR);
     $result->execute();
   }
+  /**
+  *Méthode pour supprimer un article
+  */
   public function delete(Article $article)
   {
-    echo $article->getArticleId();
     $request ='DELETE FROM Articles
     WHERE article_id ='. $article->getArticleId();
-    echo $request."<br>";
     $this->_data->exec($request);
   }
+  /**
+  *Méthode pour récupérer un article
+  *à partir de son id.
+  */
   public function get($article_id)
   {
+    //Un cast pour pour le transformer
+    //en int.
     $article_id = (int) $article_id;
+    //la requête.
     $request = 'SELECT
     article_id,
     rate,
@@ -46,11 +59,17 @@ class ArticlesManager
     unit_type,
     taxes,
     description
-    FROM Articles WHERE id ='.$article_id;
+    FROM Articles WHERE article_id ='.$article_id;
     $result = $this->_data->query($request);
     $tofill = $result->fetch(PDO::FETCH_ASSOC);
-    return new Article($tofill);
+    $result = new Article();
+    $result->hydrate($tofill);
+    return $result;
   }
+  /**
+  *Méthode pour renvoyer la liste
+  *de tous les articles.
+  */
   public function getList()
   {
     $articles = [];
@@ -61,20 +80,30 @@ class ArticlesManager
     unit_type,
     taxes,
     description
-    FROM Articles ORDER BY article_id';
+    FROM Articles';
     $result = $this->_data->query($request);
-
-    while ($tofill = $request->fetch(PDO::FETCH_ASSOC))
+    //crée un tableau associatif  avec
+    //toutes les lignes de la table.
+    $list = $result->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($list as $key => $tofill)
     {
-      $articles[] = new Article($tofill);
+        //Crée un objet
+        $tmp = new Article();
+        //Hydrate l'objet
+        $tmp->hydrate($tofill);
+        //Stocke le résultat dans un tableau.
+        $articles[] = $tmp;
     }
     return $articles;
   }
-public function update(Article $article)
+/**
+*Méthode pour mettre a jour un article.
+*/
+public function update(Article $article, array $toupdate)
 {
+  //la requête
   $request = 'UPDATE Articles SET
   (
-
     rate = :rate,
     cost = :cost,
     unit_type = :unit_type,
@@ -83,13 +112,12 @@ public function update(Article $article)
   )
   WHERE article_id ='.$article->getArticleId();
   $result = $this->_data->prepare($request);
-  $result->bindValue(':rate',$article->getRate());
-  $result->bindValue(':cost', $article->getCost());
-  $result->bindValue(':unit_type',$article->getUnitType());
-  $result->bindValue(':taxes',$article->getTaxes());
-  $result->bindValue(':description',$article->getDescription());
+  $result->bindValue(':rate',$toupdate['rate']);
+  $result->bindValue(':cost', $toupdate['cost']);
+  $result->bindValue(':unit_type',$toupdate['unit_type']);
+  $result->bindValue(':taxes',$toupdate['taxes']);
+  $result->bindValue(':description',$toupdate['description']);
   $result->execute();
-
 }
 /**
  * Set the value of Data
@@ -119,19 +147,22 @@ try {
   $db = new PDO('mysql:host=localhost;dbname=billing',
   'gillou','user');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "connecté";
+  //echo "connecté";
 } catch(PDOException $eMsg){
   print "Erreur de connexion !:" .$eMsg->getMessage()."</br>";
-  echo "non connecté";
+  //echo "non connecté";
   die();
 
 }
 
 $manager = new ArticlesManager($db);
-$manager->add($tomate);
-$tomate->hydrate(["article_id"=>1]);
+$listomates = $manager->getList();
+$toupdate = ["description"=>"Cabling Network",
+"rate"=>"100","cost"=>"30","unit_type"=>'Heure',
+"taxes"=>"21%"];
+$tomate = $manager->get(7);
+$manager->update($tomate, $toupdate);
 
-// $manager->update($tomate);
 ?>
 <!DOCTYPE html>
 <html>
@@ -142,9 +173,8 @@ $tomate->hydrate(["article_id"=>1]);
   <body>
     <pre>
       <?php
-        print_r($tomate);
-       ?>
+        print_r($listomates);
+      ?>
     </pre>
   </body>
 </html>
-?>
