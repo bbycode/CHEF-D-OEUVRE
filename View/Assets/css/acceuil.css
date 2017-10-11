@@ -1,0 +1,38 @@
+.navcolor{
+  background-color: white;
+  border-radius: 0px;
+  padding: 20px;
+  margin-bottom: 0px;
+  border-style: none;
+
+}
+.torest-img
+{
+  background-image: url('../img/weekend.jpg');
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  filter: grayscale(5);
+  height: 50vh;
+}
+.call-toaction
+{
+  height: 80vh;
+  position: absolute;
+  top:20%;
+
+  border: 1px solid yellow;
+  z-index: 100;
+
+}
+.reclame p{
+  max-width: 80%;
+  font-size: 45px;
+  font-weight: bolder;
+  color: white;
+}
+/*Le button*/
+.btn-welcom{
+  
+  bottom : 80%;
+
+}

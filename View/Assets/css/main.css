@@ -3,5 +3,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  filter: blur(8px);
+  width: 100vw;
+  filter: blur(20px);
 }
