@@ -11,28 +11,34 @@
   background-image: url('../img/weekend.jpg');
   box-sizing: border-box;
   background-repeat: no-repeat;
-  filter: grayscale(5);
-  height: 50vh;
+  height: 60vh;
 }
 .call-toaction
 {
-  height: 80vh;
+  height: 65vh;
   position: absolute;
-  top:20%;
-
-  border: 1px solid yellow;
+  top:15%;
   z-index: 100;
-
 }
 .reclame p{
+  padding: 20px;
   max-width: 80%;
   font-size: 45px;
   font-weight: bolder;
-  color: white;
+  color: black;
 }
 /*Le button*/
-.btn-welcom{
-  
-  bottom : 80%;
+.btn-position{
+  position: absolute;
+  top : 70vh;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
 
+.btn-welcom{
+padding: 20px;
+background-color: #32CB76;
+width: 100%;
+border-radius: 0px;
 }
