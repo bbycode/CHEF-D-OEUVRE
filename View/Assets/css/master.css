@@ -1,6 +1,7 @@
-/*.testborder {
-  border: 1px red solid;
-}*/
+.testborder
+{
+    border: 1px red solid;
+}
 
 .navcolor
 {
@@ -52,11 +53,11 @@ header li:hover
 
 .torest-img
 {
-    /*box-sizing: border-box;
-  background-repeat: no-repeat;*/
     height: 50vh;
 
     background-image: url('../img/weekend.jpg');
+    /*box-sizing: border-box;*/
+    background-repeat: no-repeat;
 }
 
 
@@ -121,4 +122,20 @@ header li:hover
 .btn-position a
 {
     color: #262626;
+}
+.bg-img
+{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url('../img/bg-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: blur(20px);
+}
+/*Le login*/
+.login
+{
+    min-height: 30vh;
 }

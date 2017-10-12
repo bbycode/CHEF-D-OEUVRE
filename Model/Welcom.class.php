@@ -5,9 +5,9 @@
 class Welcom
 {
 
-  function __construct(argument)
+  function __construct()
   {
-    require_once(VIEW.'welcom.php')
+    require_once(VIEW.'welcom.php');
   }
 }
  ?>
