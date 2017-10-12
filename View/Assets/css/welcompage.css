@@ -1,50 +1,107 @@
+/*.testborder {
+  border: 1px red solid;
+}*/
+
 .navcolor
 {
     margin-bottom: 0;
+    padding: 15px;
 
     border-style: none;
     border-radius: 0;
     background-color: white;
 }
+
+
+/*Header dropdown customize*/
+
+header a
+{
+    color: #262626;
+}
+
+header a:hover
+{
+    color: #32cb76;
+}
+
+.header-ul > li > a:hover
+{
+    text-decoration: none;
+
+    background-color: white;
+}
+
+header li:hover
+{
+    border-bottom: 1px solid #32cb76;
+}
+
+.header-dropdown > li > a:hover
+{
+    text-decoration: none;
+
+    color: #262626;
+    background-color: white;
+}
+
+.header-dropdown
+{
+    min-width: 142px;
+}
+
 .torest-img
 {
-    box-sizing: border-box;
-    width: 1OOvh;
-    height: 40vh;
+    /*box-sizing: border-box;
+  background-repeat: no-repeat;*/
+    height: 50vh;
 
     background-image: url('../img/weekend.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
+
+
+/*Le container pour l'appel à l'action*/
+
 .call-toaction
 {
     position: absolute;
     z-index: 100;
     top: 15%;
 
-    height: 65vh;
+    height: 60vh;
 }
+
+
+/*Le message de pub*/
+
 .reclame p
 {
-    font-size: 45px;
-    font-weight: bolder;
+    font-size: 7vh;
+    font-weight: thin;
 
     max-width: 80%;
-    padding: 20px;
 
-    color: black;
+    color: #262626;
 }
-/*Le button*/
+
+
+/*Le bouton et appel à inscription*/
+
+.call-login
+{
+    min-height: 35vh;
+}
+
 .btn-position
 {
     font-size: 16px;
 
     position: absolute;
-    top: 70vh;
+    bottom: 0;
 
     width: 100%;
 
-    text-align: center;
+    text-align: center;;
 }
 
 .btn-welcom
@@ -54,4 +111,14 @@
 
     border-radius: 0;
     background-color: #32cb76;
+}
+
+.btn-position a:hover
+{
+    color: #32cb76;
+}
+
+.btn-position a
+{
+    color: #262626;
 }
