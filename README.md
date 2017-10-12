@@ -1,8 +1,8 @@
 # CHEF D'OEUVRE
 
 L’emploi connait un profonde mutation, notre société s’oriente toujours plus vers des services. Une grande partie de ses services sont proposés par des indépendants, petites et moyennes entreprises. 
-Le but de l’application invoicing est de faciliter et automatiser au maximum les services de facturations pour independants, petites et moyennes entreprises. 
-Il intègrera à terme la possibilité de vérifier les paiement des factures et l’intégration automatiques de frais professionnels. 
+Le but de l’application invoicing-app est de faciliter et automatiser au maximum les services de facturation pour independants, petites et moyennes entreprises. 
+Il intègrera à terme la possibilité de vérifier le paiement des factures et l’intégration automatiques de frais professionnels. 
 
 ## Getting Started
 
