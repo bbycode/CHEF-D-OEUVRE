@@ -1,8 +1,14 @@
 # CHEF D'OEUVRE
 
+<<<<<<< HEAD
 L’emploi connait un profonde mutation, notre société s’oriente toujours plus vers des services. Une grande partie de ses services sont proposés par des indépendants, petites et moyennes entreprises. 
 Le but de l’application invoicing-app est de faciliter et automatiser au maximum les services de facturation pour independants, petites et moyennes entreprises. 
 Il intègrera à terme la possibilité de vérifier le paiement des factures et l’intégration automatiques de frais professionnels. 
+=======
+L’emploi connait un profonde mutation, notre société s’oriente toujours plus vers des services. Une grande partie de ses services sont proposés par des indépendants, petites et moyennes entreprises.
+Le but de l’application invoicing est de faciliter et automatiser au maximum les services de facturations pour independants, petites et moyennes entreprises.
+Il intègrera à terme la possibilité de vérifier les paiement des factures et l’intégration automatiques de frais professionnels.
+>>>>>>> 155506c36fe6e5d0642b3f0c8ebaf0fa5b0abdd6
 
 ## Getting Started
 
@@ -70,7 +76,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
@@ -87,5 +93,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
-
- 
+* Images with the courtesy of pixabay.com
